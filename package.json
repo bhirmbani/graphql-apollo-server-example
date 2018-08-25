@@ -1,0 +1,19 @@
+{
+  "name": "graphql-tutorial-1",
+  "version": "0.1.0",
+  "description": "coba pakai graphql",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bm",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.0.5",
+    "apollo-server-express": "^2.0.4",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "graphql": "^0.13.2"
+  }
+}
