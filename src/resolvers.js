@@ -1,11 +1,15 @@
 const users = {
   1: {
     id: '1',
-    username: 'Robin Wieruch',
+    username: 'robinw',
+    firstname: 'Robin',
+    lastname: 'Wieruch',
   },
   2: {
     id: '2',
-    username: 'Dave Davids',
+    username: 'daved',
+    firstname: 'Dave',
+    lastname: 'Davids',
   },
 };
 
@@ -22,6 +26,10 @@ const resolvers = {
     users: () => {
       return Object.values(users);
     },
+  },
+  User: {
+    fullname: user => `${user.firstname} ${user.lastname}`,
+    username: user => user.username
   },
 };
 
