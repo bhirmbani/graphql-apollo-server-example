@@ -17,7 +17,7 @@ const me = users[1];
 
 const resolvers = {
   Query: {
-    me: () => {
+    me: (parent, args, { me }) => {
       return me;
     },
     user: (parent, { id }) => {
