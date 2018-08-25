@@ -9,6 +9,7 @@ const schema = gql`
 
   type User {
     username: String!
+    fullname: String
     id: ID!
   }
 `;
