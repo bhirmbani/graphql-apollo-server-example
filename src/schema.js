@@ -13,6 +13,7 @@ const schema = gql`
     username: String!
     fullname: String
     id: ID!
+    messages: [Message!]
   }
 
   type Message {
