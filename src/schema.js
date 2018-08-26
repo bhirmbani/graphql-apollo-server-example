@@ -5,12 +5,20 @@ const schema = gql`
     me: User
     user(id: ID!): User
     users: [User!]
+    messages: [Message!]!
+    message(id: ID!): Message!
   }
 
   type User {
     username: String!
     fullname: String
     id: ID!
+  }
+
+  type Message {
+    id: ID!
+    text: String!
+    user: User!
   }
 `;
 
