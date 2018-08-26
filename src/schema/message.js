@@ -1,24 +1,14 @@
 const gql = require('apollo-server-express').gql;
 
-const schema = gql`
-  type Query {
-    me: User
-    user(id: ID!): User
-    users: [User!]
+const messageSchema = gql`
+  extend type Query {
     messages: [Message!]!
     message(id: ID!): Message!
   }
 
-  type Mutation {
+  extend type Mutation {
     createMessage(text: String!): Message!
     deleteMessage(id: ID!): Boolean!
-  }
-
-  type User {
-    username: String!
-    fullname: String
-    id: ID!
-    messages: [Message!]
   }
 
   type Message {
@@ -28,4 +18,4 @@ const schema = gql`
   }
 `;
 
-module.exports = schema;
+module.exports = messageSchema;
