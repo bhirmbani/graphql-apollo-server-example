@@ -13,7 +13,16 @@ const users = {
   },
 };
 
-const me = users[1];
+let messages = {
+  1: {
+    id: '1',
+    text: 'Hello World',
+  },
+  2: {
+    id: '2',
+    text: 'By World',
+  },
+};
 
 const resolvers = {
   Query: {
@@ -26,11 +35,22 @@ const resolvers = {
     users: () => {
       return Object.values(users);
     },
+    messages: () => {
+      return Object.values(messages);
+    },
+    message: (parent, { id }) => {
+      return messages[id];
+    },
   },
   User: {
     fullname: user => `${user.firstname} ${user.lastname}`,
     username: user => user.username
   },
+  Message: {
+    user: (parent, args, { me }) => {
+      return me;
+    },
+  },
 };
 
-module.exports = resolvers;
+module.exports = { resolvers, users };
