@@ -3,8 +3,8 @@ const ApolloServer = require('apollo-server-express').ApolloServer;
 const cors = require('cors');
 
 const schema = require('./schema');
-const resolvers = require('./resolvers').resolvers;
-const users = require('./resolvers').users;
+const resolvers = require('./resolvers');
+const models = require('./models');
 
 const app = express();
 
@@ -14,7 +14,8 @@ const server = new ApolloServer({
   typeDefs: schema,
   resolvers: resolvers,
   context: {
-    me: users[1],
+    models,
+    me: models.users[1],
   },
 });
 
