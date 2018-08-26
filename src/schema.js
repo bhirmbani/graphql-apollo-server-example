@@ -9,6 +9,11 @@ const schema = gql`
     message(id: ID!): Message!
   }
 
+  type Mutation {
+    createMessage(text: String!): Message!
+    deleteMessage(id: ID!): Boolean!
+  }
+
   type User {
     username: String!
     fullname: String
